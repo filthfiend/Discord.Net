@@ -46,7 +46,14 @@ namespace Discord.Commands
             User = msg.Author;
             Message = msg;
         }
-
+        public SocketCommandContext(DiscordSocketClient client, SocketUserMessage msg, SocketGuild guild)
+        {
+            Client = client;
+            Guild = guild;
+            Channel = msg.Channel;
+            User = msg.Author;
+            Message = msg;
+        }
         //ICommandContext
         /// <inheritdoc/>
         IDiscordClient ICommandContext.Client => Client;
